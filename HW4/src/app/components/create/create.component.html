@@ -1,0 +1,28 @@
+<div>
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h3>Create A New Profile</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="createForm" class="create-form">
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="First Name" formControlName="first_name" #first_name>
+        <!--<mat-error *ngIf="createForm.controls['title'].errors.required">
+          Title is <strong>required</strong>
+        </mat-error>-->
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Last Name" formControlName="last_name" #last_name>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Favorite Category" formControlName="favorite_category" #favorite_category>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <br><br>
+      <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;
+      <button type="submit" (click)="addProfile(first_name.value, last_name.value, favorite_category.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+    </form>
+  </mat-card>
+</div>
