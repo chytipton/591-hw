@@ -1,0 +1,53 @@
+<html>
+    <a href="/create">Create Profile</a>
+    <body>  
+        <div class="searchpage">
+            <h1 align: center;>Chuck Norris Joke Generator</h1>
+            <form action="/" method="post">
+            <button align: center; class="button">Go</button>
+            </form>
+
+
+            <% if(locals.joke !== null){ %>
+            <p><%= locals.joke
+            %></p align: center;>
+                <% } %>
+
+        </div>      
+
+    <style>
+      .searchpage {
+          display: block;
+          color: black;
+          text-align: center;
+          align-content: center;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      body {
+          background-image: url("https://data.whicdn.com/images/101350221/large.jpg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          width: 400px;
+          height: 400px;
+          margin: auto;
+      }
+      
+      
+      h1 {
+          color: red;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      
+      .button {
+          border-radius: 50%;
+          font-size: 40px;
+          height: 100px;
+          width: 100px;
+          }
+    </style>
+    </body>
+</html>
