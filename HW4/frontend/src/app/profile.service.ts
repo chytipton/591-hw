@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileService {
 
-  uri = 'http://localhost:4200';
+  uri = 'http://localhost:4201';
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,7 @@ export class ProfileService {
       first_name: first_name,
       last_name: last_name,
       favorite_category: favorite_category
-  };
+    }
     return this.http.post(`${this.uri}/profile/add`, profile);
 }
   updateProfile(id, first_name, last_name, favorite_category) {

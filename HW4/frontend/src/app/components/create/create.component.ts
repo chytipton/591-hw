@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../../profile.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; 
+
+import { ProfileService } from '../../profile.service';
 
 @Component({
   selector: 'app-create',
@@ -16,13 +17,14 @@ export class CreateComponent implements OnInit {
     this.createForm = this.fb.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
-      favortie_category: ''
+      favorite_category: ['']
     });
   }
 
   addProfile(first_name, last_name, favorite_category) {
+    console.log('hi');
     this.profileService.addProfile(first_name, last_name, favorite_category).subscribe(() => {
-      this.router.navigate(['/list']);
+      this.router.navigate(['/joke']);
     });
   }
 

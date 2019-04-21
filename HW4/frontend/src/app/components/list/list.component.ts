@@ -11,9 +11,13 @@ import { ProfileService } from '../../profile.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+
   profile: Profile[];
-  displayedColumns = ['first_name', 'last_name', 'favorite_category'];
+
+  displayedColumns = ['first_name', 'last_name', 'favorite_category', 'actions'];
+
   constructor(private profileService: ProfileService, private router: Router) { }
+
   ngOnInit() {
     this.fetchProfile();
   }
@@ -23,7 +27,7 @@ export class ListComponent implements OnInit {
     .subscribe((data: Profile[]) => {
       this.profile = data;
       console.log('Data requested ... ');
-      console.log(this.profile);
+      console.log(data);
     });
   }
   editProfile(id) {

@@ -13,11 +13,13 @@ import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 
 import { ProfileService } from './profile.service';
+import { JokeComponent } from './joke/joke.component';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent},
   { path: 'edit/:id', component: EditComponent},
   { path: 'list', component: ListComponent},
+  {path: 'joke', component: JokeComponent },
   { path: '', redirectTo: 'list', pathMatch: 'full'}
 ];
 
@@ -26,7 +28,8 @@ const routes: Routes = [
     AppComponent,
     ListComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    JokeComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ const routes: Routes = [
     MatDividerModule,
     MatSnackBarModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
