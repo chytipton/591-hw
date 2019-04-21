@@ -11,7 +11,6 @@ let app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-//let jokeresponse = require('./jokeresponse');
 
 mongoose.connect('mongodb://localhost:27017/profile', {useNewUrlParser: true}, function(err, db) {
     if (err) {
@@ -23,10 +22,6 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB database connection established successfully!');
 });
-
-
-//app.use('/', jokeresponse);
-//app.use('/', router);
 
 app.set('view engine', 'ejs');
 
@@ -84,11 +79,6 @@ router.route('/profile/delete/:id').get((req, res) => {
     });
 });
 
-//router.get('/', function (req, res) {
-  //  res.render('index');
- // })
-  
-//router.post('/joke', function (req, res) {
 router.route('/').get((req, res) => {
     console.log('hey!')
     let url = 'http://api.icndb.com/jokes/random?escape=javascript';
@@ -102,8 +92,6 @@ router.route('/').get((req, res) => {
           res.render({joke, joke: null, error: 'Error!'});
         } else {
           let jokeText = `Joke: ${joke.value.joke}  Category: ${joke.value.categories}`;
-         // let category = `Category: ${joke.value.categories}`;
-          //res.render({'joke', joke: jokeText, error: null});
           res.json({"joke": jokeText});
         }
       } });

@@ -1,3 +1,10 @@
+In order to run:
+
+node app.js
+ng serve --o
+
+will run on ports 4201 anf 4200
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
